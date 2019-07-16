@@ -9,18 +9,6 @@ import java.util.List;
 
 public class Util {
 
-    private static long time;
-
-    public static void startTime(){
-        time = System.currentTimeMillis();
-    }
-
-    public static String  endTime(){
-        long end = System.currentTimeMillis();
-        float sec = (end - time) / 1000F;
-        return (sec + " segundos");
-    }
-
     public static List<Client> fileToClientList(MultipartFile mFile) throws IOException {
 
         List<Client> clientList = new ArrayList<>();
@@ -38,6 +26,8 @@ public class Util {
                 client.setId(Long.parseLong(clientLine[0]));
                 client.setName(clientLine[1]);
                 client.setEmail(clientLine[2]);
+                client.setStreet(clientLine[3]);
+                client.setAge(Integer.parseInt(clientLine[4]));
 
                 clientList.add(client);
             }

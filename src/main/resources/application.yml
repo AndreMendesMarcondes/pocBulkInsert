@@ -5,7 +5,8 @@ spring:
     password: guest
   servlet:
     multipart:
-      enabled: true
+      maxFileSize: 100MB
+      maxRequestSize: 100MB
   jpa:
     hibernate:
       ddl-auto: update
